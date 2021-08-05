@@ -35,7 +35,7 @@ const Home = () => {
                             { contacts.map((contact,id) => (
                                 <tr key={id} >
                                     <td>{id + 1}</td>
-                                    <td>{contact.Name}</td>
+                                    <td>{contact.name}</td>
                                     <td>{contact.email}</td>
                                     <td>{contact.num}</td>
                                     <td> 
