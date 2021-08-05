@@ -1,16 +1,5 @@
 const intialState = [
-    {
-        id:1,
-        name: "Rohith",
-        email:"k.rohithkumar27@gmail.com",
-        num: "9441761524"
-    },
-    {
-        id:2,
-        name: "Rohith",
-        email:"k.rohithkumar27@gmail.com",
-        num: "8555026211"
-    } 
+    
 ]
 
 const ContactReducer = (state=intialState,action) =>{ 
