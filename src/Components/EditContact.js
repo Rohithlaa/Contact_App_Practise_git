@@ -27,7 +27,7 @@ const EditContact = () => {
         e.preventDefault()
         const checkMail = contacts.find( (contact) => contact.id !== parseInt(id) && contact.email === email && email)
         const checkNum = contacts.find( (contact) => contact.id !== parseInt(id) && contact.num === num && num)
-        console.log(checkNum)
+        console.log(checkNum, "Number validation")
         
         if(email==="" || name==="" || num ===""){
             return toast.warning("Please fill all the fields!")
