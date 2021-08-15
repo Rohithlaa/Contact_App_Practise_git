@@ -10,6 +10,7 @@ const EditContact = () => {
     const {id} = useParams()
     const contacts = useSelector(state => state)
     //  console.log(id)
+    // git stash
      console.log(contacts.map(contact => contact.id))
     const validId = contacts.find( contact => contact.id === parseInt(id))
     const dispatch = useDispatch()
