@@ -10,17 +10,17 @@ import EditContact from './Components/EditContact';
 function App() {
   return (
     <> 
-    <ToastContainer />
     <Navbar />
     <Switch>
-    <Route exact path='/' component={ () =>  <Home /> }/>
     <Route  path='/add'>
     <AddContact />
     </Route>
     <Route exact path='/edit/:id'>
     <EditContact />
     </Route>
+    <Route exact path='/' component={ () =>  <Home /> }/>
     </Switch> 
+    <ToastContainer />
     </>
   );
 }

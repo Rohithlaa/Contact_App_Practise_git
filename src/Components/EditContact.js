@@ -8,12 +8,16 @@ const EditContact = () => {
     const[email, setEmail] = useState('')
     const[num, setNum] = useState('')
     const {id} = useParams()
+    // console.log(useParams())
+
     const contacts = useSelector(state => state)
     //  console.log(id)
-     console.log(contacts.map(contact => contact.id))
+    //  console.log(contacts.map(contact => contact.id))
     const validId = contacts.find( contact => contact.id === parseInt(id))
+    console.log(validId)
     const dispatch = useDispatch()
     const history = useHistory()
+    
 
     useEffect( () => {
         if(validId) {
@@ -27,7 +31,7 @@ const EditContact = () => {
         e.preventDefault()
         const checkMail = contacts.find( (contact) => contact.id !== parseInt(id) && contact.email === email && email)
         const checkNum = contacts.find( (contact) => contact.id !== parseInt(id) && contact.num === num && num)
-        console.log(checkNum)
+        // console.log(checkNum)
         
         if(email==="" || name==="" || num ===""){
             return toast.warning("Please fill all the fields!")
@@ -38,12 +42,14 @@ const EditContact = () => {
         if(checkNum){
            return toast.error("This Number is already Exists!")
        }
+       
        const data = {
            id: parseInt(id),
            name,
            email,
            num
        }
+    //    console.log(data)
 
        dispatch({type: "UPDATE_CONTACT", payload: data})
        toast.success("User Updated Successfully")
